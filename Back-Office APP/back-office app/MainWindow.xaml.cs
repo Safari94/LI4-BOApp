@@ -34,5 +34,18 @@ namespace WpfApplication1
         {
 
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void login_Click(object sender, RoutedEventArgs e)
+        {
+            String id = ident.Text;
+            String password = pass.Password;
+
+            MessageBox.Show(password);
+        }
     }
 }

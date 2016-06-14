@@ -10,11 +10,11 @@
                     <ColumnDefinition Width="430*"/>
                 </Grid.ColumnDefinitions>
                 <Rectangle HorizontalAlignment="Left" Height="302" Margin="195,116,0,0" Stroke="Black" VerticalAlignment="Top" Width="430" Grid.Column="1" Fill="#FFD0D6C2"/>
-                <Button Content="LOGIN" HorizontalAlignment="Left" Margin="370,348,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                <Button x:Name="login" Content="&#xD;&#xA;LOGIN" HorizontalAlignment="Left" Margin="370,348,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="login_Click"/>
                 <Label Content="Identificador" HorizontalAlignment="Left" Margin="275,199,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                 <Label Content="Password" HorizontalAlignment="Left" Margin="291,262,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                <TextBox HorizontalAlignment="Left" Height="25" Margin="367,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Grid.Column="1" FontSize="14"/>
-                <PasswordBox HorizontalAlignment="Left" Margin="367,262,0,0" VerticalAlignment="Top" Width="148" Height="25" Grid.Column="1" FontSize="14"/>
+                <TextBox x:Name="ident" HorizontalAlignment="Left" Height="25" Margin="367,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Grid.Column="1" FontSize="14" TextChanged="TextBox_TextChanged"/>
+                <PasswordBox x:Name="pass" HorizontalAlignment="Left" Margin="367,262,0,0" VerticalAlignment="Top" Width="148" Height="25" Grid.Column="1" FontSize="14"/>
             </Grid>
         </TabItem>
         <TabItem Header="INSERIR" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">

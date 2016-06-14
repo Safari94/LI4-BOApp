@@ -17,7 +17,7 @@ namespace WpfApplication1
         {
             string connetionString = null;
             
-            connetionString = "Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password";
+            connetionString = "Data Source=VAREJATOR\\SQLEXPRESS;Initial Catalog=LI4;User ID=VAREJATPR\\nomore_000;Password= ";
             cnn = new SqlConnection(connetionString);
             try
             {

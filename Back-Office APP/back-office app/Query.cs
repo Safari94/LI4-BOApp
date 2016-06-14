@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WpfApplication1
 {
@@ -51,6 +52,59 @@ namespace WpfApplication1
 
 
         }
+
+        public void insereUtilizador(int id, String nome, String dataNas, String dataIns, int posto) {
+
+            query = "insert into Utilizador values(" + id + "," + nome + "," + dataNas + "," + dataIns + "," + posto + ")";
+
+            SqlCommand comando = new SqlCommand(query,cnn);
+
+            try
+            {
+                
+                int recordsAffected = comando.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Inserção falhada!");
+            }
+
+            
+
+
+        }
+
+        public bool validaAutenticacao(String id, String pass) {
+
+            query = "select * from Utilizador where nome=" + id;
+            SqlCommand comando = new SqlCommand(query, cnn);
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+
+                if (recordsAffected != 0)
+                {
+                    MessageBox.Show("Login com Sucesso");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Login falhado!");
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Login falhado!");
+                return false;
+            }
+
+
+        }
+
+      
+
 
     
 
