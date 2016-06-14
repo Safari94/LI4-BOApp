@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-Office APP", "..\..\..\..\Desktop\Xavier\LI4\Back-Office APP\Back-Office APP\back-office app\Back-Office APP.csproj", "{8B895F60-4CF2-47C9-8DC5-C20FFDDC5608}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-Office APP", "Back-Office APP.csproj", "{8B895F60-4CF2-47C9-8DC5-C20FFDDC5608}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

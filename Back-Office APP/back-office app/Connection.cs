@@ -13,7 +13,7 @@ namespace WpfApplication1
 
         }
         // Returna um conexão com o sql Server
-        private SqlConnection ligar()
+        public SqlConnection ligar()
         {
             string connetionString = null;
             

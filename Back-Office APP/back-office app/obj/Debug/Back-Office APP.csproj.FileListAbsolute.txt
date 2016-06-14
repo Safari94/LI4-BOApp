@@ -17,3 +17,6 @@ C:\Users\Xavier\Downloads\Back-Office APP\Back-Office APP\back-office app\obj\De
 C:\Users\Carolina Rodrigues\Desktop\Xavier\LI4\Back-Office APP\Back-Office APP\back-office app\bin\Debug\WpfApplication1.exe.config
 C:\Users\Carolina Rodrigues\Desktop\Xavier\LI4\Back-Office APP\Back-Office APP\back-office app\obj\Debug\WpfApplication1.exe
 C:\Users\Carolina Rodrigues\Desktop\Xavier\LI4\Back-Office APP\Back-Office APP\back-office app\obj\Debug\WpfApplication1.pdb
+C:\Users\Carolina Rodrigues\Documents\GitHub\LI4-BOApp\Back-Office APP\back-office app\bin\Debug\WpfApplication1.exe.config
+C:\Users\Carolina Rodrigues\Documents\GitHub\LI4-BOApp\Back-Office APP\back-office app\obj\Debug\WpfApplication1.exe
+C:\Users\Carolina Rodrigues\Documents\GitHub\LI4-BOApp\Back-Office APP\back-office app\obj\Debug\WpfApplication1.pdb
