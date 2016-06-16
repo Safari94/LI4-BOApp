@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows;
 
 namespace WpfApplication1
 {
-    
+
     class Query
     {
 
@@ -207,14 +203,7 @@ namespace WpfApplication1
         }
 
         
-        public static void Main() {
-
-            Query a = new Query();
-            a.inserePostos(1, "Major");
-          
-            //a.insereUtilizador(1, "Joaquim Martins", "1994-12-24", "2012-04-04", 1);
-
-        }
+      
 
 
 

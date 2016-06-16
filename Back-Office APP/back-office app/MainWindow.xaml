@@ -4,17 +4,18 @@
         Title="BackOficce-APP" Height="600.746" Width="898.134" ResizeMode="NoResize">
     <TabControl HorizontalAlignment="Left" Height="564" Margin="-3,1,0,0" VerticalAlignment="Top" Width="888" SelectionChanged="TabControl_SelectionChanged">
         <TabItem Header="LOGIN" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">
-            <Grid Background="#FFE68D22" Margin="0,9,0,-9">
+            <Grid Background="#FFE68D22" Margin="24,10,-24,-10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="11*"/>
-                    <ColumnDefinition Width="430*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="Auto" MinWidth="24"/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Rectangle HorizontalAlignment="Left" Height="302" Margin="195,116,0,0" Stroke="Black" VerticalAlignment="Top" Width="430" Grid.Column="1" Fill="#FFD0D6C2"/>
-                <Button x:Name="login" Content="&#xD;&#xA;LOGIN" HorizontalAlignment="Left" Margin="370,348,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="login_Click"/>
-                <Label Content="Identificador" HorizontalAlignment="Left" Margin="275,199,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                <Label Content="Password" HorizontalAlignment="Left" Margin="291,262,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                <TextBox x:Name="ident" HorizontalAlignment="Left" Height="25" Margin="367,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Grid.Column="1" FontSize="14" TextChanged="TextBox_TextChanged"/>
-                <PasswordBox x:Name="pass" HorizontalAlignment="Left" Margin="367,262,0,0" VerticalAlignment="Top" Width="148" Height="25" Grid.Column="1" FontSize="14"/>
+                <Rectangle HorizontalAlignment="Left" Height="302" Margin="134,116,0,0" Stroke="Black" VerticalAlignment="Top" Width="430" Grid.Column="2" Fill="#FFD0D6C2"/>
+                <Button x:Name="login" Content="&#xD;&#xA;LOGIN" HorizontalAlignment="Left" Margin="310,348,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2" Click="login_Click" Height="36"/>
+                <Label Content="Identificador" HorizontalAlignment="Left" Margin="214,199,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="78"/>
+                <Label Content="Password" HorizontalAlignment="Left" Margin="230,262,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="60"/>
+                <TextBox x:Name="ident" HorizontalAlignment="Left" Height="25" Margin="306,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Grid.Column="2" FontSize="14" TextChanged="TextBox_TextChanged"/>
+                <PasswordBox x:Name="pass" HorizontalAlignment="Left" Margin="306,262,0,0" VerticalAlignment="Top" Width="148" Height="25" Grid.Column="2" FontSize="14"/>
             </Grid>
         </TabItem>
         <TabItem Header="INSERIR" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">
@@ -37,23 +38,26 @@
                     <TabItem Header="OPERACIONAL">
                         <Grid Background="#FFE68D22">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="189*"/>
-                                <ColumnDefinition Width="692*"/>
+                                <ColumnDefinition Width="32*"/>
+                                <ColumnDefinition Width="143*"/>
+                                <ColumnDefinition Width="15*"/>
+                                <ColumnDefinition Width="56*"/>
+                                <ColumnDefinition Width="636*"/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="350" Margin="167,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="542" Grid.ColumnSpan="2"/>
-                            <Label Content="Identificador" HorizontalAlignment="Left" Margin="83,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,0.577" Grid.Column="1"/>
-                            <Label Content="Nome" HorizontalAlignment="Left" Margin="118,180,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                            <Label Content="Data de nascimento" HorizontalAlignment="Left" Margin="45,212,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                            <Label Content="Data de ingresso" HorizontalAlignment="Left" Margin="61,243,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                            <Label Content="Posto" HorizontalAlignment="Left" Margin="120,276,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="187,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Grid.Column="1"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="187,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Grid.Column="1"/>
-                            <Button Content="Confirmar" HorizontalAlignment="Left" Margin="135,374,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
-                            <Button Content="Cancelar" HorizontalAlignment="Left" Margin="278,374,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
-                            <ComboBox HorizontalAlignment="Left" Margin="187,279,0,0" VerticalAlignment="Top" Width="176" Grid.Column="1"/>
-                            <DatePicker HorizontalAlignment="Left" Margin="187,214,0,0" VerticalAlignment="Top" Width="177" Grid.Column="1"/>
-                            <DatePicker HorizontalAlignment="Left" Margin="187,246,0,0" VerticalAlignment="Top" Width="177" Grid.Column="1"/>
-                            <Button Content="LogOut" HorizontalAlignment="Left" Margin="616,0,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
+                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="350" Margin="135.5,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="542" Grid.ColumnSpan="4" Grid.Column="1"/>
+                            <Label Content="Identificador" HorizontalAlignment="Left" Margin="27,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,0.577" Grid.Column="4"/>
+                            <Label Content="Nome" HorizontalAlignment="Left" Margin="63,180,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+                            <Label Content="Data de nascimento" HorizontalAlignment="Left" Margin="45,212,0,0" VerticalAlignment="Top" Grid.Column="3" Grid.ColumnSpan="2"/>
+                            <Label Content="Data de ingresso" HorizontalAlignment="Left" Margin="5,243,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+                            <Label Content="Posto" HorizontalAlignment="Left" Margin="65,276,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+                            <TextBox x:Name="idU" HorizontalAlignment="Left" Height="23" Margin="131,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Grid.Column="4"/>
+                            <TextBox x:Name="nomeU" HorizontalAlignment="Left" Height="23" Margin="131,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Grid.Column="4"/>
+                            <Button x:Name="confirUser" Content="Confirmar" HorizontalAlignment="Left" Margin="79,374,0,0" VerticalAlignment="Top" Width="76" Grid.Column="4" Click="confirUser_Click"/>
+                            <Button x:Name="cancelaU" Content="Cancelar" HorizontalAlignment="Left" Margin="223,374,0,0" VerticalAlignment="Top" Width="74" Grid.Column="4" Click="cancelaU_Click"/>
+                            <ComboBox x:Name="postos" HorizontalAlignment="Left" Margin="131,279,0,0" VerticalAlignment="Top" Width="176" Grid.Column="4"/>
+                            <DatePicker x:Name="dataN" HorizontalAlignment="Left" Margin="131,214,0,0" VerticalAlignment="Top" Width="178" Grid.Column="4"/>
+                            <DatePicker x:Name="dataI" HorizontalAlignment="Left" Margin="131,246,0,0" VerticalAlignment="Top" Width="178" Grid.Column="4"/>
+                            <Button Content="LogOut" HorizontalAlignment="Left" Margin="561,0,-1,0" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="TAREFA" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">
@@ -61,10 +65,10 @@
                             <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="278" Margin="206,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="460"/>
                             <Label Content="Identificador" HorizontalAlignment="Left" Margin="298,143,0,0" VerticalAlignment="Top"/>
                             <Label Content="Descrição" HorizontalAlignment="Left" Margin="314,194,0,0" VerticalAlignment="Top"/>
-                            <Button Content="Confirmar" HorizontalAlignment="Left" Margin="341,320,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
-                            <Button Content="Cancelar" HorizontalAlignment="Left" Margin="471,320,0,0" VerticalAlignment="Top" Width="75"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="386,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
-                            <TextBox HorizontalAlignment="Left" Height="81" Margin="386,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
+                            <Button x:Name="confirma" Content="Confirmar" HorizontalAlignment="Left" Margin="341,320,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+                            <Button x:Name="cancela" Content="Cancelar" HorizontalAlignment="Left" Margin="471,320,0,0" VerticalAlignment="Top" Width="75" Click="cancela_Click"/>
+                            <TextBox x:Name="id" HorizontalAlignment="Left" Height="23" Margin="386,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
+                            <TextBox x:Name="tarefa" HorizontalAlignment="Left" Height="81" Margin="386,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
                             <Button Content="LogOut" HorizontalAlignment="Left" Margin="804,0,0,0" VerticalAlignment="Top" Width="76"/>
                         </Grid>
                     </TabItem>

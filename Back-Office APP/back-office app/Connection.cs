@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows;
-using System.IO;
-using System.Windows.Forms;
 
 namespace WpfApplication1
 {
