@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows;
+using System.IO;
+using System.Windows.Forms;
 
 namespace WpfApplication1
 {
@@ -16,8 +18,8 @@ namespace WpfApplication1
         public SqlConnection ligar()
         {
             string connetionString = null;
+            connetionString = "Data Source=VAREJATOR\\SQLEXPRESS;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             
-            connetionString = "Data Source=VAREJATOR\\SQLEXPRESS;Initial Catalog=LI4;User ID=VAREJATPR\\nomore_000;Password= ";
             cnn = new SqlConnection(connetionString);
             try
             {
@@ -32,7 +34,7 @@ namespace WpfApplication1
             return cnn;
         }
         // Desliga a conexão com o sqlServer
-        private void desligar() {
+        public void desligar() {
             cnn.Close();
             MessageBox.Show("Conexão Fechada ! ");
         }

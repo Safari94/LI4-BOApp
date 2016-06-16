@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace WpfApplication1
 {
@@ -13,20 +13,153 @@ namespace WpfApplication1
     class Query
     {
 
-        public  Connection cs;
+        public Connection cs;
         public SqlConnection cnn;
         string query;
 
         public Query() {
-           cnn=cs.ligar();
+            this.cs = new Connection();
+            this.cnn=cs.ligar();
             this.query = null;
         }
 
 
-        public void insertTarefas(String tarefa) {
 
-            query = "INSERT INTO  ";
-           
+        public void inserePostos(int a, String b)
+        {
+            query = "use LI4_f; INSERT INTO Posto (idPosto,descricao) values(" + a + "," + "'"+b+"'" + ");";
+
+            SqlCommand comando = new SqlCommand(query, cnn);
+
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
+            }
+            catch (SqlException z){
+            
+                MessageBox.Show("Inserção falhada!");
+            }
+        }
+
+        public void inserePontoInteresse(int id, float latitude, float longitude, String a, String b, String c)
+        {
+            query = "use LI4_f; Insert into Pontos_Interesse values(" + id + "," + latitude + "," + longitude + "," +
+                "'" + a + "'" + "," + "'" + b + "'" + "," + "'" + c + "'" + ");";
+
+            SqlCommand comando = new SqlCommand(query, cnn);
+
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
+            }
+            catch (SqlException z)
+            {
+
+                MessageBox.Show("Inserção falhada!");
+            }
+        }
+
+        public void insertEstado(int id, String estado)
+        {
+
+            query = "use LI4_f; INSERT INTO Estado(idEstado,descricao) values (" + id + "," + "'" + estado + "'" + ")";
+
+            SqlCommand comando = new SqlCommand(query, cnn);
+
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
+            }
+            catch (SqlException)
+            {
+
+                MessageBox.Show("Inserção falhada!");
+            }
+
+        }
+
+        public void insereMissao(int id, String relatorio,String voz, int utilizador, int estado){
+            
+            query = "use LI4_f; INSERT INTO Estado(idEstado,descricao) values (" + id + "," + "'" + relatorio + "'" + "," +
+                "'" + voz + "'" + "," + utilizador + "," + estado +")" ;
+
+            SqlCommand comando = new SqlCommand(query, cnn);
+
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
+            }
+            catch (SqlException)
+            {
+
+                MessageBox.Show("Inserção falhada!");
+            }
+        }
+
+        public void insereMissao(int id, int utilizador, int estado)
+        {
+            query = "use LI4_f; INSERT INTO Missao(idMissao,Utilizador_idUtilizador,Estado_idEstado) values (" + id + "," + utilizador + "," + estado + ")";
+
+            SqlCommand comando = new SqlCommand(query, cnn);
+
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
+            }
+            catch (SqlException)
+            {
+
+                MessageBox.Show("Inserção falhada!");
+            }
+        }
+
+        public void insertMissaoHasTarefa(int idM, int idT, int idPI)
+        {
+            query = "use LI4_f; INSERT INTO Missao_has_Tarefa values (" + idM + "," + idT + "," + idPI + ")";
+
+            SqlCommand comando = new SqlCommand(query, cnn);
+
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
+            }
+            catch (SqlException)
+            {
+
+                MessageBox.Show("Inserção falhada!");
+            }
+
+        }
+
+        public void insertTarefas(int id,String tarefa) {
+
+            query = "use LI4_f; INSERT INTO Tarefa(idTarefa,descricao) values ("+ id + "," + "'" + tarefa+"'" + ")";
+
+            SqlCommand comando = new SqlCommand(query, cnn);
+
+            try
+            {
+
+                int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
+            }
+            catch (SqlException)
+            {
+
+                MessageBox.Show("Inserção falhada!");
+            }
 
         }
 
@@ -55,7 +188,9 @@ namespace WpfApplication1
 
         public void insereUtilizador(int id, String nome, String dataNas, String dataIns, int posto) {
 
-            query = "insert into Utilizador values(" + id + "," + nome + "," + dataNas + "," + dataIns + "," + posto + ")";
+            query = 
+                "using LI4_f; insert into Utilizador values(" + id + "," + "'" + nome + "'" + "," + "'" + dataNas +"'" +
+                "," + "'"+ dataIns+ "'" + "," + posto + ")";
 
             SqlCommand comando = new SqlCommand(query,cnn);
 
@@ -63,47 +198,24 @@ namespace WpfApplication1
             {
                 
                 int recordsAffected = comando.ExecuteNonQuery();
+                cs.desligar();
             }
             catch (SqlException)
             {
                 MessageBox.Show("Inserção falhada!");
             }
+        }
 
-            
+        
+        public static void Main() {
 
+            Query a = new Query();
+            a.inserePostos(1, "Major");
+          
+            //a.insereUtilizador(1, "Joaquim Martins", "1994-12-24", "2012-04-04", 1);
 
         }
 
-        public bool validaAutenticacao(String id, String pass) {
-
-            query = "select * from Utilizador where nome=" + id;
-            SqlCommand comando = new SqlCommand(query, cnn);
-            try
-            {
-
-                int recordsAffected = comando.ExecuteNonQuery();
-
-                if (recordsAffected != 0)
-                {
-                    MessageBox.Show("Login com Sucesso");
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Login falhado!");
-                    return false;
-                }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Login falhado!");
-                return false;
-            }
-
-
-        }
-
-      
 
 
     
