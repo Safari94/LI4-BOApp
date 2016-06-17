@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Windows;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WpfApplication1
 {
-
+    
     class Query
     {
 
@@ -20,6 +24,7 @@ namespace WpfApplication1
         }
 
 
+                                    /*   INSERTS BASE DE DADOS   */
 
         public void inserePostos(int a, String b)
         {
@@ -159,28 +164,6 @@ namespace WpfApplication1
 
         }
 
-        public void showOperacionais() {
-
-            query= "Select * From operacionais";
-            
-                
-    using (SqlCommand myCommand = new SqlCommand(query, cnn))
-            {
-                
-                using (SqlDataReader reader = myCommand.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Console.WriteLine(reader["columnName"].ToString());
-                    }
-                }
-            }
-        }
-
-        public void insereMissao(int operacional, String nomeMissao, IList tarefas, IList pInteresse) {
-
-
-        }
 
         public void insereUtilizador(int id, String nome, String dataNas, String dataIns, int posto) {
 
@@ -202,8 +185,41 @@ namespace WpfApplication1
             }
         }
 
+
+                                            /*   SELECTS BASE DE DADOS    */
+        public void showPostos()
+        {
+
+            query = "use LI4_f; Select * From Posto;";
+
+
+            using (SqlCommand myCommand = new SqlCommand(query, cnn))
+            {
+                try
+                {
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                           MessageBox.Show(""+reader.Read().ToString());
+                        }
+                    }
+                }
+                catch (SqlException a)
+                {
+                    MessageBox.Show("" + a);
+                }
+            }
+        }
+
+
         
-      
+        public static void Main() {
+
+            Query a = new Query();
+            a.showPostos();
+
+        }
 
 
 
