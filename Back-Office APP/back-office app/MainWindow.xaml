@@ -164,36 +164,21 @@
                 </TabControl>
             </Grid>
         </TabItem>
-        <TabItem Header="UPDATE" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">
+        <TabItem Header="TRANSFERENCIA" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="118" Margin="-2,-2,-61,0">
             <Grid Background="#FFE68D22">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TabControl x:Name="tab_update" HorizontalAlignment="Left" Height="538" Margin="-1,-2,0,0" VerticalAlignment="Top" Width="883">
-                    <TabItem Header="ENVIAR MISSÃO">
-                        <Grid Background="#FFE68D22">
+                    <TabItem Header="CONNECTOR">
+                        <Grid Background="#FFE68D22" Margin="0,-4,0,4">
                             <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="356" Margin="157,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="564"/>
-                            <Label Content="Missão" HorizontalAlignment="Left" Margin="289,126,0,0" VerticalAlignment="Top"/>
-                            <Button Content="Enviar" HorizontalAlignment="Left" Margin="323,382,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Cancelar" HorizontalAlignment="Left" Margin="468,382,0,0" VerticalAlignment="Top" Width="75"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="363,129,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                            <Button Content="Ok" HorizontalAlignment="Left" Margin="525,131,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button Content="Enviar" HorizontalAlignment="Left" Margin="393,360,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button Content="Receber" HorizontalAlignment="Left" Margin="389,190,0,0" VerticalAlignment="Top" Width="75"/>
                             <Separator HorizontalAlignment="Left" Height="11" Margin="157,179,0,0" VerticalAlignment="Top" Width="562"/>
-                            <Label Content="Tarefas" HorizontalAlignment="Left" Margin="202,195,0,0" VerticalAlignment="Top"/>
-                            <DataGrid HorizontalAlignment="Left" Height="103" Margin="266,203,0,0" VerticalAlignment="Top" Width="397"/>
-                            <Label Content="Operacional" HorizontalAlignment="Left" Margin="176,325,0,0" VerticalAlignment="Top"/>
-                            <Label Content="Label" HorizontalAlignment="Left" Margin="266,325,0,0" VerticalAlignment="Top" Width="262"/>
+                            <Label Content="Receber Dados" HorizontalAlignment="Left" Margin="379,123,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Enviar Dados" HorizontalAlignment="Left" Margin="389,296,0,0" VerticalAlignment="Top"/>
                             <Button x:Name="logout9" Content="LogOut" HorizontalAlignment="Left" Margin="801,0,0,0" VerticalAlignment="Top" Width="76"/>
-                        </Grid>
-                    </TabItem>
-                    <TabItem Header="ENVIAR PONTO INTERESSE">
-                        <Grid x:Name="logout11" Background="#FFE68D22">
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="323" Margin="178,54,0,0" Stroke="Black" VerticalAlignment="Top" Width="521"/>
-                            <Button x:Name="logout10" Content="LogOut" HorizontalAlignment="Left" Margin="801,0,0,0" VerticalAlignment="Top" Width="76"/>
-                            <DataGrid HorizontalAlignment="Left" Margin="199,102,0,0" VerticalAlignment="Top" Height="246" Width="395"/>
-                            <Button Content="Ver dados" HorizontalAlignment="Left" Margin="608,146,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Enviar" HorizontalAlignment="Left" Margin="608,181,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Limpar" HorizontalAlignment="Left" Margin="608,218,0,0" VerticalAlignment="Top" Width="75"/>
                         </Grid>
                     </TabItem>
                 </TabControl>

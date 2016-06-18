@@ -54,7 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Cordenadas.cs" />
+    <Compile Include="PontoInteresee.cs" />
     <Compile Include="Query.cs" />
+    <Compile Include="Tarefa.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

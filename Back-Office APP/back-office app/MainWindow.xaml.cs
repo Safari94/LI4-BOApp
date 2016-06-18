@@ -22,6 +22,8 @@ namespace WpfApplication1
     {
         Query q;
         String password;
+        List<Tarefa> tarefas;
+        List<>
 
 
         public MainWindow()
