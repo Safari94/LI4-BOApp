@@ -173,7 +173,7 @@
                     <TabItem Header="CONNECTOR">
                         <Grid Background="#FFE68D22" Margin="0,-4,0,4">
                             <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="356" Margin="157,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="564"/>
-                            <Button Content="Enviar" HorizontalAlignment="Left" Margin="393,360,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button Content="Enviar" HorizontalAlignment="Left" Margin="393,360,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
                             <Button Content="Receber" HorizontalAlignment="Left" Margin="389,190,0,0" VerticalAlignment="Top" Width="75"/>
                             <Separator HorizontalAlignment="Left" Height="11" Margin="157,179,0,0" VerticalAlignment="Top" Width="562"/>
                             <Label Content="Receber Dados" HorizontalAlignment="Left" Margin="379,123,0,0" VerticalAlignment="Top"/>

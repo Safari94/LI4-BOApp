@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Mobile_APP;
+using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +25,9 @@ namespace WpfApplication1
         Query q;
         String password;
         List<Tarefa> tarefas;
-        List<>
+        List<PontoInteresee> pinteresse;
+        static SerialPort porta;
+        String data;
 
 
         public MainWindow()
@@ -32,9 +36,13 @@ namespace WpfApplication1
             InitializeComponent();
             q = new Query();
             password = "password";
+            data = "";
+            porta = new SerialPort("COM6", 9600, Parity.None, 8, StopBits.One);
+            tarefas = new List<Tarefa>();
+            pinteresse = new List<PontoInteresee>();
 
             //fazer disable de todas as tabs exceto login
-            
+
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -187,6 +195,31 @@ namespace WpfApplication1
         private void logout10_Click(Object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+
+        // Enviar Dados para a APPMovel
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            porta.Open();
+            // Vai enviar o tamanho da lista de tarefas que vai ser enviada;
+            data = tarefas.Count.ToString();
+            porta.Write(data);
+            foreach (Tarefa t in tarefas){
+
+                data = t.descricao + "," + t.coord.latitude + "," + t.coord.latitude;
+                porta.Write(data);
+
+
+            }
+            data = pinteresse.Count.ToString();
+            porta.Write(data);
+            foreach (PontoInteresee p in pinteresse) {
+                data= p.coord.latitude+","+p.coord.longitude+","+p.nome+","+p.descricao;
+                porta.Write(data);
+            }
+            MessageBox.Show("Transferencia feita");
+
         }
     }
 
