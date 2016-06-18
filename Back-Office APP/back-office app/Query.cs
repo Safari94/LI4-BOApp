@@ -38,7 +38,7 @@ namespace WpfApplication1
                 int recordsAffected = comando.ExecuteNonQuery();
                 cs.desligar();
             }
-            catch (SqlException z){
+            catch (SqlException){
             
                 MessageBox.Show("Inserção falhada!");
             }
@@ -57,7 +57,7 @@ namespace WpfApplication1
                 int recordsAffected = comando.ExecuteNonQuery();
                 cs.desligar();
             }
-            catch (SqlException z)
+            catch (SqlException)
             {
 
                 MessageBox.Show("Inserção falhada!");
@@ -201,7 +201,7 @@ namespace WpfApplication1
                     {
                         while (reader.Read())
                         {
-                           MessageBox.Show(""+reader.Read().ToString());
+                           MessageBox.Show(""+reader[0].ToString()+"\t"+reader[1].ToString());
                         }
                     }
                 }
@@ -211,19 +211,6 @@ namespace WpfApplication1
                 }
             }
         }
-
-
-        
-        public static void Main() {
-
-            Query a = new Query();
-            a.showPostos();
-
-        }
-
-
-
-    
 
 
     }

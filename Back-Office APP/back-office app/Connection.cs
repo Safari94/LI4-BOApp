@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Windows;
+//using System.Windows;
 using System.IO;
 using System.Windows.Forms;
 
@@ -27,7 +27,7 @@ namespace WpfApplication1
                 MessageBox.Show("Conexão Aberta ! ");
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Não foi possivel estabelecer ligação! ");
             }

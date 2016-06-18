@@ -20,11 +20,19 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        Query q; 
+        Query q;
+        String password;
+
+
         public MainWindow()
+
         {
             InitializeComponent();
             q = new Query();
+            password = "password";
+
+            //fazer disable de todas as tabs exceto login
+            
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,9 +52,13 @@ namespace WpfApplication1
         private void login_Click(object sender, RoutedEventArgs e)
         {
             string id = ident.Text;
-            string password = pass.Password;
+            string passw = pass.Password;
 
-            MessageBox.Show(password);
+            if (password == passw)
+            {
+                //fazer enable do resto das tabs e fazer disable da tab login
+            }
+            
         }
 
         //-------------------------------------- INTERFACE TAREFA ------------------------------------------
@@ -78,8 +90,9 @@ namespace WpfApplication1
             string dataNasc = dataN.SelectedDate.Value.ToString("MM / dd / yyyy");
             string dataIns = dataI.SelectedDate.Value.ToString("MM / dd / yyyy");
             string var = postos.Text;
-            q.insereUtilizador(Int32.Parse(ident),name,dataNasc,dataIns,1);
+            string[] aux= var.Split('-');
 
+            q.insereUtilizador(Int32.Parse(ident), name, dataNasc, dataIns, Int32.Parse(aux[0]));
 
         }
 
@@ -87,9 +100,93 @@ namespace WpfApplication1
         {
             idU.Text = "";
             nomeU.Text = "";
-            dataN.SelectedDate.Value.ToString("");
-            dataI.SelectedDate.Value.ToString("");
+            dataN.DataContext = null;
+            dataI.DataContext = null;
             postos.Text = "";
         }
+
+        //-------------------------------------- INTERFACE PontoInteresse ------------------------------------------
+
+        private void confirmaPI_Click(Object sender, RoutedEventArgs e)
+        {
+            int id = Int32.Parse(idPI.Text);
+            float latitude = float.Parse(laPI.Text);
+            float longitude = float.Parse(loPI.Text);
+            String image = l1PI.ToString();
+            String audio = L2PI.ToString();
+            String txt = txtPI.Text;
+            q.inserePontoInteresse(id,latitude,longitude, image, audio,txt);
+
+            idPI.Text = "";
+            laPI.Text = "";
+            loPI.Text = "";
+            l1PI.BeginInit();
+            L2PI.BeginInit();
+            txtPI.Text = "";
+
+        }
+
+        private void cancelaPI_Click(Object sender, RoutedEventArgs e)
+        {
+            idPI.Text = "";
+            laPI.Text = "";
+            loPI.Text = "";
+            l1PI.BeginInit();
+            L2PI.BeginInit();
+            txtPI.Text = "";
+        }
+
+
+        private void logout1_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout2_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout3_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout4_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout5_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout6_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout7_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout8_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout9_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void logout10_Click(Object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
+
+   
 }
