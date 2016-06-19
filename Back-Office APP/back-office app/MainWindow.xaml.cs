@@ -156,7 +156,7 @@ namespace WpfApplication1
 
         private void logout1_Click(Object sender, RoutedEventArgs e)
         {
-            this.Close();   
+            this.Close();  
         }
 
         private void logout2_Click(Object sender, RoutedEventArgs e)
@@ -208,13 +208,17 @@ namespace WpfApplication1
 
         private void okMi_Click(Object sender, RoutedEventArgs e)
         {
+            String idMissao = idmissao.Text;
             String[,] aux = new String[100, 2];
 
             //saca todas as tarefas da base de dados
             aux = q.showTarefas();
 
             //insere na tabela tarefas
-            tabelaTarefas.
+            //bloqueia outras tabs ate confirmar ou cancelar
+            
+
+            //isto em java ja tava feito ao tempo fodasse
         }
 
 

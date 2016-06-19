@@ -88,6 +88,14 @@ namespace WpfApplication1 {
         #line hidden
         
         
+        #line 27 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox idmissao;
+        
+        #line default
+        #line hidden
+        
+        
         #line 28 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button okMi;
@@ -410,21 +418,24 @@ namespace WpfApplication1 {
             this.tab_inserir = ((System.Windows.Controls.TabControl)(target));
             return;
             case 7:
-            this.okMi = ((System.Windows.Controls.Button)(target));
+            this.idmissao = ((System.Windows.Controls.TextBox)(target));
             return;
             case 8:
-            this.tabelaTarefas = ((System.Windows.Controls.DataGrid)(target));
+            this.okMi = ((System.Windows.Controls.Button)(target));
             return;
             case 9:
-            this.logout1 = ((System.Windows.Controls.Button)(target));
+            this.tabelaTarefas = ((System.Windows.Controls.DataGrid)(target));
             return;
             case 10:
-            this.idU = ((System.Windows.Controls.TextBox)(target));
+            this.logout1 = ((System.Windows.Controls.Button)(target));
             return;
             case 11:
-            this.nomeU = ((System.Windows.Controls.TextBox)(target));
+            this.idU = ((System.Windows.Controls.TextBox)(target));
             return;
             case 12:
+            this.nomeU = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 13:
             this.confirUser = ((System.Windows.Controls.Button)(target));
             
             #line 58 "..\..\MainWindow.xaml"
@@ -433,7 +444,7 @@ namespace WpfApplication1 {
             #line default
             #line hidden
             return;
-            case 13:
+            case 14:
             this.cancelaU = ((System.Windows.Controls.Button)(target));
             
             #line 59 "..\..\MainWindow.xaml"
@@ -442,19 +453,19 @@ namespace WpfApplication1 {
             #line default
             #line hidden
             return;
-            case 14:
+            case 15:
             this.postos = ((System.Windows.Controls.ComboBox)(target));
             return;
-            case 15:
+            case 16:
             this.dataN = ((System.Windows.Controls.DatePicker)(target));
             return;
-            case 16:
+            case 17:
             this.dataI = ((System.Windows.Controls.DatePicker)(target));
             return;
-            case 17:
+            case 18:
             this.logout2 = ((System.Windows.Controls.Button)(target));
             return;
-            case 18:
+            case 19:
             this.confirma = ((System.Windows.Controls.Button)(target));
             
             #line 71 "..\..\MainWindow.xaml"
@@ -463,7 +474,7 @@ namespace WpfApplication1 {
             #line default
             #line hidden
             return;
-            case 19:
+            case 20:
             this.cancela = ((System.Windows.Controls.Button)(target));
             
             #line 72 "..\..\MainWindow.xaml"
@@ -472,61 +483,61 @@ namespace WpfApplication1 {
             #line default
             #line hidden
             return;
-            case 20:
+            case 21:
             this.id = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 21:
+            case 22:
             this.tarefa = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 22:
+            case 23:
             this.logout3 = ((System.Windows.Controls.Button)(target));
             return;
-            case 23:
+            case 24:
             this.confirmaPI = ((System.Windows.Controls.Button)(target));
             return;
-            case 24:
+            case 25:
             this.cancelaPI = ((System.Windows.Controls.Button)(target));
             return;
-            case 25:
+            case 26:
             this.idPI = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 26:
+            case 27:
             this.laPI = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 27:
+            case 28:
             this.loPI = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 28:
+            case 29:
             this.txtPI = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 29:
+            case 30:
             this.l1PI = ((System.Windows.Controls.Label)(target));
             return;
-            case 30:
+            case 31:
             this.L2PI = ((System.Windows.Controls.Label)(target));
             return;
-            case 31:
+            case 32:
             this.logout4 = ((System.Windows.Controls.Button)(target));
             return;
-            case 32:
+            case 33:
             this.tab_edicao = ((System.Windows.Controls.TabControl)(target));
             return;
-            case 33:
+            case 34:
             this.logout5 = ((System.Windows.Controls.Button)(target));
             return;
-            case 34:
+            case 35:
             this.logout6 = ((System.Windows.Controls.Button)(target));
             return;
-            case 35:
+            case 36:
             this.logout7 = ((System.Windows.Controls.TabItem)(target));
             return;
-            case 36:
+            case 37:
             this.logout8 = ((System.Windows.Controls.TabItem)(target));
             return;
-            case 37:
+            case 38:
             this.tab_update = ((System.Windows.Controls.TabControl)(target));
             return;
-            case 38:
+            case 39:
             
             #line 181 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
@@ -534,7 +545,7 @@ namespace WpfApplication1 {
             #line default
             #line hidden
             return;
-            case 39:
+            case 40:
             this.logout9 = ((System.Windows.Controls.Button)(target));
             return;
             }

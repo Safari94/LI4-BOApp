@@ -24,7 +24,6 @@ namespace WpfApplication1
             try
             {
                 cnn.Open();
-                MessageBox.Show("Conexão Aberta ! ");
                 
             }
             catch (Exception)
