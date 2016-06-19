@@ -35,7 +35,6 @@ namespace WpfApplication1
         // Desliga a conexão com o sqlServer
         public void desligar() {
             cnn.Close();
-            MessageBox.Show("Conexão Fechada ! ");
         }
     }
 }

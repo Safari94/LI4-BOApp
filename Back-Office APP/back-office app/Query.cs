@@ -217,6 +217,7 @@ namespace WpfApplication1
                     return null;
                 }
             }
+            cs.desligar();
             return f;
         }
 
@@ -250,6 +251,7 @@ namespace WpfApplication1
                     return null;
                 }
             }
+            cs.desligar();
             return f;
         }
       }

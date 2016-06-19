@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Controls;
+
 
 
 namespace WpfApplication1
@@ -42,6 +42,14 @@ namespace WpfApplication1
             porta = new SerialPort("COM6", 9600, Parity.None, 8, StopBits.One);
             tarefas = new List<Tarefa>();
             pinteresse = new List<PontoInteresee>();
+            
+            string[,] posto = new String[100, 2];
+            posto = q.showPostos();
+            for (int i = 0; i < 100 && posto[i,0]!= null; i++)
+            {
+                postos.Items.Add(posto[i, 0] + "-" + posto[i, 1]);
+
+            }
 
             //fazer disable de todas as tabs exceto login
 
@@ -66,7 +74,7 @@ namespace WpfApplication1
             string id = ident.Text;
             string passw = pass.Password;
 
-            if (password == passw)
+            if (password.Equals(passw))
             {
                 //fazer enable do resto das tabs e fazer disable da tab login
             }
@@ -78,6 +86,7 @@ namespace WpfApplication1
         // Quando clica em confimar insere tarefa
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            q = new Query();
             string idt = id.Text;
             string tf = tarefa.Text;
             q.insertTarefas(Int32.Parse(idt), tf);
@@ -97,13 +106,19 @@ namespace WpfApplication1
 
         private void confirUser_Click(object sender, RoutedEventArgs e)
         {
+            q = new Query();
             string ident = idU.Text;
             string name = nomeU.Text;
             string dataNasc = dataN.SelectedDate.Value.ToString("MM / dd / yyyy");
             string dataIns = dataI.SelectedDate.Value.ToString("MM / dd / yyyy");
             string var = postos.Text;
-            string[] aux= var.Split('-');
 
+            
+            
+            string[] aux= var.Split('-');
+            
+            
+            
             q.insereUtilizador(Int32.Parse(ident), name, dataNasc, dataIns, Int32.Parse(aux[0]));
 
         }
@@ -121,6 +136,7 @@ namespace WpfApplication1
 
         private void confirmaPI_Click(Object sender, RoutedEventArgs e)
         {
+            q = new Query();
             int id = Int32.Parse(idPI.Text);
             float latitude = float.Parse(laPI.Text);
             float longitude = float.Parse(loPI.Text);
@@ -129,8 +145,6 @@ namespace WpfApplication1
             String txt = txtPI.Text;
 
             q.inserePontoInteresse(id,latitude,longitude, image, audio,txt);
-
-            q = new Query();
 
             idPI.Text = "";
             laPI.Text = "";
@@ -208,17 +222,23 @@ namespace WpfApplication1
 
         private void okMi_Click(Object sender, RoutedEventArgs e)
         {
+            q = new Query();
+            MessageBox.Show("fodase");
             String idMissao = idmissao.Text;
             String[,] aux = new String[100, 2];
-
+            q = new Query();
+            
             //saca todas as tarefas da base de dados
             aux = q.showTarefas();
+            
+
+            tabelaTarefas.Items.Add(aux[0, 0]+"-"+ aux[0,1]);
 
             //insere na tabela tarefas
             //bloqueia outras tabs ate confirmar ou cancelar
             
 
-            //isto em java ja tava feito ao tempo fodasse
+            
         }
 
 
