@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls;
+
 
 namespace WpfApplication1
 {
@@ -125,7 +127,10 @@ namespace WpfApplication1
             String image = l1PI.ToString();
             String audio = L2PI.ToString();
             String txt = txtPI.Text;
+
             q.inserePontoInteresse(id,latitude,longitude, image, audio,txt);
+
+            q = new Query();
 
             idPI.Text = "";
             laPI.Text = "";
@@ -147,54 +152,69 @@ namespace WpfApplication1
         }
 
 
+        //-------------------------------------- BUTOES LOGOUT ------------------------------------------
+
         private void logout1_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();   
         }
 
         private void logout2_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout3_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout4_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout5_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout6_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout7_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout8_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout9_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void logout10_Click(Object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
+        }
+
+        //-------------------------------------- INTERFACE INSERIR MISSAO ------------------------------------------
+
+        private void okMi_Click(Object sender, RoutedEventArgs e)
+        {
+            String[,] aux = new String[100, 2];
+
+            //saca todas as tarefas da base de dados
+            aux = q.showTarefas();
+
+            //insere na tabela tarefas
+            tabelaTarefas.
         }
 
 

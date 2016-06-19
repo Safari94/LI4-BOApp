@@ -187,11 +187,11 @@ namespace WpfApplication1
 
 
                                             /*   SELECTS BASE DE DADOS    */
-        public void showPostos()
+        public String[,] showPostos()
         {
 
             query = "use LI4_f; Select * From Posto;";
-
+            String[,] f = new String[100,2]; int i = 0; int j = 0;
 
             using (SqlCommand myCommand = new SqlCommand(query, cnn))
             {
@@ -201,18 +201,58 @@ namespace WpfApplication1
                     {
                         while (reader.Read())
                         {
-                           MessageBox.Show(""+reader[0].ToString()+"\t"+reader[1].ToString());
+                          
+                          f[i,j+1] = reader[1].ToString();
+                          f[i,j] = reader[0].ToString();
+                          j = 0;
+                          i++;
                         }
+                        
                     }
+                   
                 }
                 catch (SqlException a)
                 {
                     MessageBox.Show("" + a);
+                    return null;
                 }
             }
+            return f;
         }
 
+        public String[,] showTarefas()
+        {
 
-    }
+            query = "use LI4_f; Select * From Tarefa;";
+            String[,] f = new String[100, 2]; int i = 0; int j = 0;
+
+            using (SqlCommand myCommand = new SqlCommand(query, cnn))
+            {
+                try
+                {
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            f[i, j + 1] = reader[1].ToString();
+                            f[i, j] = reader[0].ToString();
+                            j = 0;
+                            i++;
+                        }
+
+                    }
+
+                }
+                catch (SqlException a)
+                {
+                    MessageBox.Show("" + a);
+                    return null;
+                }
+            }
+            return f;
+        }
+      }
+
     }
 

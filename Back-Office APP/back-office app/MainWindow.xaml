@@ -25,11 +25,16 @@
                             <Label Content="Identificador" HorizontalAlignment="Left" Margin="292,130,0,0" VerticalAlignment="Top"/>
                             <Label Content="Tarefas" HorizontalAlignment="Left" Margin="237,232,0,0" VerticalAlignment="Top"/>
                             <TextBox HorizontalAlignment="Left" Height="23" Margin="395,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-                            <Button Content="Ok" HorizontalAlignment="Left" Margin="407,184,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button x:Name="okMi" Content="Ok" HorizontalAlignment="Left" Margin="407,184,0,0" VerticalAlignment="Top" Width="75"/>
                             <Separator HorizontalAlignment="Left" Height="5" Margin="199,216,0,0" VerticalAlignment="Top" Width="476"/>
                             <Button Content="Confirmar" HorizontalAlignment="Left" Margin="346,432,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button Content="Cancelar" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Width="75"/>
-                            <DataGrid HorizontalAlignment="Left" Height="120" Margin="243,265,0,0" VerticalAlignment="Top" Width="389"/>
+                            <DataGrid x:Name="tabelaTarefas" HorizontalAlignment="Left" Height="120" Margin="243,265,0,0" VerticalAlignment="Top" Width="389">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn/>
+                                    <DataGridTextColumn/>
+                                </DataGrid.Columns>
+                            </DataGrid>
                             <Button x:Name="logout1" Content="LogOut" HorizontalAlignment="Left" Margin="805,0,0,0" VerticalAlignment="Top" Width="76"/>
                         </Grid>
                     </TabItem>
@@ -164,7 +169,7 @@
                 </TabControl>
             </Grid>
         </TabItem>
-        <TabItem Header="TRANSFERENCIA" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="118" Margin="-2,-2,-61,0">
+        <TabItem Header="TRANSFERENCIA" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="116" Margin="0">
             <Grid Background="#FFE68D22">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -175,7 +180,7 @@
                             <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="356" Margin="157,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="564"/>
                             <Button Content="Enviar" HorizontalAlignment="Left" Margin="393,360,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
                             <Button Content="Receber" HorizontalAlignment="Left" Margin="389,190,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Separator HorizontalAlignment="Left" Height="11" Margin="157,179,0,0" VerticalAlignment="Top" Width="562"/>
+                            <Separator HorizontalAlignment="Left" Height="11" Margin="157,254,0,0" VerticalAlignment="Top" Width="562"/>
                             <Label Content="Receber Dados" HorizontalAlignment="Left" Margin="379,123,0,0" VerticalAlignment="Top"/>
                             <Label Content="Enviar Dados" HorizontalAlignment="Left" Margin="389,296,0,0" VerticalAlignment="Top"/>
                             <Button x:Name="logout9" Content="LogOut" HorizontalAlignment="Left" Margin="801,0,0,0" VerticalAlignment="Top" Width="76"/>

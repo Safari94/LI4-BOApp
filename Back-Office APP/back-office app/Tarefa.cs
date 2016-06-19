@@ -20,7 +20,7 @@ namespace Mobile_APP
 
         
 
-        public String ToString()
+        public String toString()
         {
             return "Descricao= "+descricao + ";" + "Estado= " + estado + ";" + coord.toString();
                   
