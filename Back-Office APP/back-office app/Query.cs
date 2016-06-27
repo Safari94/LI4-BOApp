@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace WpfApplication1
 {
-    
+
     class Query
     {
 
@@ -17,18 +17,19 @@ namespace WpfApplication1
         public SqlConnection cnn;
         string query;
 
-        public Query() {
+        public Query()
+        {
             this.cs = new Connection();
-            this.cnn=cs.ligar();
+            this.cnn = cs.ligar();
             this.query = null;
         }
 
 
-                                    /*   INSERTS BASE DE DADOS   */
+        /*   INSERTS BASE DE DADOS   */
 
         public void inserePostos(int a, String b)
         {
-            query = "use LI4_f; INSERT INTO Posto (idPosto,descricao) values(" + a + "," + "'"+b+"'" + ");";
+            query = "use LI4_f; INSERT INTO Posto (idPosto,descricao) values(" + a + "," + "'" + b + "'" + ");";
 
             SqlCommand comando = new SqlCommand(query, cnn);
 
@@ -38,8 +39,9 @@ namespace WpfApplication1
                 int recordsAffected = comando.ExecuteNonQuery();
                 cs.desligar();
             }
-            catch (SqlException){
-            
+            catch (SqlException)
+            {
+
                 MessageBox.Show("Inserção falhada!");
             }
         }
@@ -85,10 +87,11 @@ namespace WpfApplication1
 
         }
 
-        public void insereMissao(int id, String relatorio,String voz, int utilizador, int estado){
-            
+        public void insereMissao(int id, String relatorio, String voz, int utilizador, int estado)
+        {
+
             query = "use LI4_f; INSERT INTO Estado(idEstado,descricao) values (" + id + "," + "'" + relatorio + "'" + "," +
-                "'" + voz + "'" + "," + utilizador + "," + estado +")" ;
+                "'" + voz + "'" + "," + utilizador + "," + estado + ")";
 
             SqlCommand comando = new SqlCommand(query, cnn);
 
@@ -144,9 +147,10 @@ namespace WpfApplication1
 
         }
 
-        public void insertTarefas(int id,String tarefa) {
+        public void insertTarefas(int id, String tarefa)
+        {
 
-            query = "use LI4_f; INSERT INTO Tarefa(idTarefa,descricao) values ("+ id + "," + "'" + tarefa+"'" + ")";
+            query = "use LI4_f; INSERT INTO Tarefa(idTarefa,descricao) values (" + id + "," + "'" + tarefa + "'" + ")";
 
             SqlCommand comando = new SqlCommand(query, cnn);
 
@@ -165,17 +169,18 @@ namespace WpfApplication1
         }
 
 
-        public void insereUtilizador(int id, String nome, String dataNas, String dataIns, int posto) {
+        public void insereUtilizador(int id, String nome, String dataNas, String dataIns, int posto)
+        {
 
-            query = 
-                "using LI4_f; insert into Utilizador values(" + id + "," + "'" + nome + "'" + "," + "'" + dataNas +"'" +
-                "," + "'"+ dataIns+ "'" + "," + posto + ")";
+            query =
+                "using LI4_f; insert into Utilizador values(" + id + "," + "'" + nome + "'" + "," + "'" + dataNas + "'" +
+                "," + "'" + dataIns + "'" + "," + posto + ")";
 
-            SqlCommand comando = new SqlCommand(query,cnn);
+            SqlCommand comando = new SqlCommand(query, cnn);
 
             try
             {
-                
+
                 int recordsAffected = comando.ExecuteNonQuery();
                 cs.desligar();
             }
@@ -186,12 +191,12 @@ namespace WpfApplication1
         }
 
 
-                                            /*   SELECTS BASE DE DADOS    */
+                                                /*   SELECTS BASE DE DADOS    */
         public String[,] showPostos()
         {
 
             query = "use LI4_f; Select * From Posto;";
-            String[,] f = new String[100,2]; int i = 0; int j = 0;
+            String[,] f = new String[100, 2]; int i = 0; int j = 0;
 
             using (SqlCommand myCommand = new SqlCommand(query, cnn))
             {
@@ -201,15 +206,15 @@ namespace WpfApplication1
                     {
                         while (reader.Read())
                         {
-                          
-                          f[i,j+1] = reader[1].ToString();
-                          f[i,j] = reader[0].ToString();
-                          j = 0;
-                          i++;
+
+                            f[i, j + 1] = reader[1].ToString();
+                            f[i, j] = reader[0].ToString();
+                            j = 0;
+                            i++;
                         }
-                        
+
                     }
-                   
+
                 }
                 catch (SqlException a)
                 {
@@ -254,7 +259,152 @@ namespace WpfApplication1
             cs.desligar();
             return f;
         }
-      }
+
+
+        public String[,] showMissoes()
+        {
+            query = "use LI4_f; Select * From Mssao;";
+            String[,] f = new String[100, 2]; int i = 0; int j = 0;
+
+            using (SqlCommand myCommand = new SqlCommand(query, cnn))
+            {
+                try
+                {
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            f[i, j] = reader[0].ToString();
+                            f[i, j + 1] = reader[1].ToString();
+                            f[i, j + 2] = reader[2].ToString();
+                            f[i, j + 3] = reader[3].ToString();
+                            f[i, j + 4] = reader[4].ToString();
+                            j = 0;
+                            i++;
+                        }
+
+                    }
+
+                }
+                catch (SqlException a)
+                {
+                    MessageBox.Show("" + a);
+                    return null;
+                }
+            }
+            cs.desligar();
+            return f;
+        }
+
+        public String[,] showPontosInteresse()
+        {
+            query = "use LI4_f; Select * From Pontos_Interesse;";
+            String[,] f = new String[100, 2]; int i = 0; int j = 0;
+
+            using (SqlCommand myCommand = new SqlCommand(query, cnn))
+            {
+                try
+                {
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            f[i, j] = reader[0].ToString();
+                            f[i, j + 1] = reader[1].ToString();
+                            f[i, j + 2] = reader[2].ToString();
+                            f[i, j + 3] = reader[3].ToString();
+                            f[i, j + 4] = reader[4].ToString();
+                            f[i, j + 5] = reader[5].ToString();
+                            j = 0;
+                            i++;
+                        }
+
+                    }
+
+                }
+                catch (SqlException a)
+                {
+                    MessageBox.Show("" + a);
+                    return null;
+                }
+            }
+            cs.desligar();
+            return f;
+        }
+
+        public String[,] showUtilizadores()
+        {
+            query = "use LI4_f; Select * From Utilizadores;";
+            String[,] f = new String[100, 2]; int i = 0; int j = 0;
+
+            using (SqlCommand myCommand = new SqlCommand(query, cnn))
+            {
+                try
+                {
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            f[i, j] = reader[0].ToString();
+                            f[i, j + 1] = reader[1].ToString();
+                            f[i, j + 2] = reader[2].ToString();
+                            f[i, j + 3] = reader[3].ToString();
+                            f[i, j + 4] = reader[4].ToString();
+   
+                            j = 0;
+                            i++;
+                        }
+
+                    }
+
+                }
+                catch (SqlException a)
+                {
+                    MessageBox.Show("" + a);
+                    return null;
+                }
+            }
+            cs.desligar();
+            return f;
+        }
+
+        public String[,] showMissoesTarefas(String s)
+        {
+            query = "use LI4_f; Select * From Missao_has_Tarefa where Missao_idMissao="+s+";";
+            String[,] f = new String[100, 2]; int i = 0; int j = 0;
+
+            using (SqlCommand myCommand = new SqlCommand(query, cnn))
+            {
+                try
+                {
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            f[i, j] = reader[0].ToString();
+                            f[i, j + 1] = reader[1].ToString();
+                            f[i, j + 2] = reader[2].ToString();
+                            j = 0;
+                            i++;
+                        }
+
+                    }
+
+                }
+                catch (SqlException a)
+                {
+                    MessageBox.Show("" + a);
+                    return null;
+                }
+            }
+            cs.desligar();
+            return f;
+        }
+
+    }
+
+
+
 
     }
 

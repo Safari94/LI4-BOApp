@@ -4,14 +4,14 @@
         Title="BackOficce-APP" Height="600.746" Width="898.134" ResizeMode="NoResize">
     <TabControl x:Name="tab1" HorizontalAlignment="Left" Height="564" Margin="-3,1,0,0" VerticalAlignment="Top" Width="888" SelectionChanged="TabControl_SelectionChanged">
         <TabItem x:Name="login1" Header="LOGIN" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">
-            <Grid Margin="0,0,-10,-10">
+            <Grid x:Name="LOGIN" Margin="0,0,-10,-10">
                 <Grid.Background>
                     <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                 </Grid.Background>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Rectangle HorizontalAlignment="Left" Height="302" Margin="222,112,0,0" Stroke="Black" VerticalAlignment="Top" Width="430" Fill="#FFD0D6C2"/>
+                <Rectangle x:Name="REC1" HorizontalAlignment="Left" Height="302" Margin="222,112,0,0" Stroke="Black" VerticalAlignment="Top" Width="430" Fill="#FFD0D6C2"/>
                 <Button x:Name="login" Content="LOGIN" HorizontalAlignment="Left" Margin="398,348,0,0" VerticalAlignment="Top" Width="74" Click="login_Click" Height="36"/>
                 <Label Content="Identificador" HorizontalAlignment="Left" Margin="302,199,0,0" VerticalAlignment="Top" Height="26" Width="78"/>
                 <Label Content="Password" HorizontalAlignment="Left" Margin="318,262,0,0" VerticalAlignment="Top" Height="26" Width="60"/>
@@ -30,31 +30,35 @@
                         <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                     </TabControl.Background>
                     <TabItem Header="MISSÃO">
-                        <Grid Margin="0,0,0,-11">
+                        <Grid x:Name="INSERIRMISSAO" Margin="0,0,0,-11">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="96*"/>
+                                <ColumnDefinition Width="785*"/>
+                            </Grid.ColumnDefinitions>
                             <Grid.Background>
                                 <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                             </Grid.Background>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="400" Margin="198,77,0,0" Stroke="Black" VerticalAlignment="Top" Width="479"/>
-                            <Label Content="Identificador" HorizontalAlignment="Left" Margin="292,130,0,0" VerticalAlignment="Top"/>
-                            <Label Content="Tarefas" HorizontalAlignment="Left" Margin="237,232,0,0" VerticalAlignment="Top"/>
-                            <TextBox x:Name="idmissao" HorizontalAlignment="Left" Height="23" Margin="395,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-                            <Button x:Name="okMi" Content="Ok" HorizontalAlignment="Left" Margin="407,184,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Separator HorizontalAlignment="Left" Height="5" Margin="199,216,0,0" VerticalAlignment="Top" Width="476"/>
-                            <Button Content="Confirmar" HorizontalAlignment="Left" Margin="346,432,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Cancelar" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Width="75"/>
-                            <DataGrid x:Name="tabelaTarefas" HorizontalAlignment="Left" Height="120" Margin="243,265,0,0" VerticalAlignment="Top" Width="389"/>
-                            <Button x:Name="logout1" Content="LogOut" HorizontalAlignment="Left" Margin="805,0,0,0" VerticalAlignment="Top" Width="76"/>
+                            <Rectangle x:Name="REC2" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="400" Margin="102,77,0,0" Stroke="Black" VerticalAlignment="Top" Width="479" Grid.Column="1"/>
+                            <Label Content="Identificador" HorizontalAlignment="Left" Margin="196,130,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                            <Label Content="Tarefas" HorizontalAlignment="Left" Margin="141,232,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                            <TextBox x:Name="idmissao" HorizontalAlignment="Left" Height="23" Margin="299,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+                            <Button x:Name="okMi" Content="Ok" HorizontalAlignment="Left" Margin="311,184,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                            <Separator HorizontalAlignment="Left" Height="5" Margin="103,216,0,0" VerticalAlignment="Top" Width="476" Grid.Column="1"/>
+                            <Button Content="Confirmar" HorizontalAlignment="Left" Margin="250,432,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                            <Button Content="Cancelar" HorizontalAlignment="Left" Margin="362,432,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                            <DataGrid x:Name="tabelaTarefas" HorizontalAlignment="Left" Height="120" Margin="147,265,0,0" VerticalAlignment="Top" Width="389" Grid.Column="1"/>
+                            <Button x:Name="logout1" Content="LogOut" HorizontalAlignment="Left" Margin="709,0,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="OPERACIONAL">
-                        <Grid>
+                        <Grid x:Name="INSERIROPERACIONAL">
                             <Grid.Background>
                                 <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                             </Grid.Background>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="350" Margin="168,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="542"/>
+                            <Rectangle x:Name="REC3" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="350" Margin="168,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="542"/>
                             <Label Content="Identificador" HorizontalAlignment="Left" Margin="273,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,0.577"/>
                             <Label Content="Nome" HorizontalAlignment="Left" Margin="309,180,0,0" VerticalAlignment="Top"/>
                             <Label Content="Data de nascimento" HorizontalAlignment="Left" Margin="235,212,0,0" VerticalAlignment="Top"/>
@@ -70,12 +74,12 @@
                             <Button x:Name="logout2" Content="LogOut" HorizontalAlignment="Left" Margin="807,0,-2,0" VerticalAlignment="Top" Width="76"/>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="TAREFA" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">
+                    <TabItem x:Name="INSERIRTAREFA" Header="TAREFA" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="55">
                         <Grid Margin="0,0,1,-1">
                             <Grid.Background>
                                 <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                             </Grid.Background>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="278" Margin="206,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="460"/>
+                            <Rectangle x:Name="REC4" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="278" Margin="206,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="460"/>
                             <Label Content="Identificador" HorizontalAlignment="Left" Margin="298,143,0,0" VerticalAlignment="Top"/>
                             <Label Content="Descrição" HorizontalAlignment="Left" Margin="314,194,0,0" VerticalAlignment="Top"/>
                             <Button x:Name="confirma" Content="Confirmar" HorizontalAlignment="Left" Margin="341,320,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
@@ -94,7 +98,7 @@
                                 <ColumnDefinition Width="169*"/>
                                 <ColumnDefinition Width="712*"/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="378" Margin="13,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="517" Grid.Column="1"/>
+                            <Rectangle x:Name="REC5" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="378" Margin="13,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="517" Grid.Column="1"/>
                             <Label Content="Identificador" HorizontalAlignment="Left" Margin="108,133,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                             <Label Content="Latitude" HorizontalAlignment="Left" Margin="132,164,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                             <Label Content="Longitude" HorizontalAlignment="Left" Margin="121,196,0,0" VerticalAlignment="Top" Grid.Column="1"/>
@@ -109,8 +113,8 @@
                             <TextBox x:Name="txtPI" Grid.Column="1" HorizontalAlignment="Left" Height="87" Margin="206,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167"/>
                             <Label x:Name="l1PI" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="206,229,0,0" VerticalAlignment="Top" Width="164"/>
                             <Label x:Name="L2PI" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="206,260,0,0" VerticalAlignment="Top" Width="164"/>
-                            <Button Content="Selecionar" Grid.Column="1" HorizontalAlignment="Left" Margin="389,234,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Selecionar" Grid.Column="1" HorizontalAlignment="Left" Margin="389,264,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button x:Name="sImagem" Content="Selecionar" Grid.Column="1" HorizontalAlignment="Left" Margin="389,234,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button x:Name="sAudio" Content="Selecionar" Grid.Column="1" HorizontalAlignment="Left" Margin="389,264,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button x:Name="logout4" Content="LogOut" HorizontalAlignment="Left" Margin="636,0,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
                         </Grid>
                     </TabItem>
@@ -132,18 +136,13 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="421" Margin="108,49,0,0" Stroke="Black" VerticalAlignment="Top" Width="666"/>
-                            <Label Content="Desde" HorizontalAlignment="Left" Margin="222,97,0,0" VerticalAlignment="Top"/>
-                            <Label Content="Até" HorizontalAlignment="Left" Margin="236,132,0,0" VerticalAlignment="Top"/>
-                            <DatePicker HorizontalAlignment="Left" Margin="288,98,0,0" VerticalAlignment="Top" Width="167"/>
-                            <DatePicker HorizontalAlignment="Left" Margin="288,135,0,0" VerticalAlignment="Top" Width="167"/>
-                            <Button Content="Confirmar" HorizontalAlignment="Left" Margin="573,118,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Separator HorizontalAlignment="Left" Height="23" Margin="109,187,0,0" VerticalAlignment="Top" Width="663"/>
-                            <DataGrid HorizontalAlignment="Left" Height="223" Margin="153,219,0,0" VerticalAlignment="Top" Width="461"/>
-                            <Button Content="Remover" HorizontalAlignment="Left" Margin="641,251,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Editar" HorizontalAlignment="Left" Margin="641,286,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Limpar" HorizontalAlignment="Left" Margin="641,323,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Rectangle x:Name="REC6" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="421" Margin="108,49,0,0" Stroke="Black" VerticalAlignment="Top" Width="666"/>
+                            <DataGrid HorizontalAlignment="Left" Height="319" Margin="153,123,0,0" VerticalAlignment="Top" Width="461"/>
+                            <Button x:Name="mRemover" Content="Remover" HorizontalAlignment="Left" Margin="647,189,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button x:Name="mEditar" Content="Editar" HorizontalAlignment="Left" Margin="647,224,0,0" VerticalAlignment="Top" Width="75"/>
+                            <Button x:Name="mLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="647,261,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button x:Name="logout5" Content="LogOut" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="76"/>
+                            <Button x:Name="vDadosM" Content="Ver dados" HorizontalAlignment="Left" Margin="647,155,0,0" VerticalAlignment="Top" Width="75"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="OPERACIONAIS">
@@ -154,7 +153,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="401" Margin="111,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="648"/>
+                            <Rectangle x:Name="REC8" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="401" Margin="111,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="648"/>
                             <DataGrid HorizontalAlignment="Left" Height="269" Margin="137,95,0,0" VerticalAlignment="Top" Width="462"/>
                             <Button Content="Ver dados" HorizontalAlignment="Left" Margin="639,139,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button Content="Remover" HorizontalAlignment="Left" Margin="639,173,0,0" VerticalAlignment="Top" Width="75"/>
@@ -163,7 +162,7 @@
                             <Button x:Name="logout6" Content="LogOut" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="76"/>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name="logout7" Header="TAREFAS" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="62" Margin="0">
+                    <TabItem Header="TAREFAS" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="62" Margin="0">
                         <Grid>
                             <Grid.Background>
                                 <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
@@ -174,21 +173,21 @@
                             <Button Content="Remover" HorizontalAlignment="Left" Margin="629,183,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button Content="Editar" HorizontalAlignment="Left" Margin="629,215,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button Content="Limpar" HorizontalAlignment="Left" Margin="629,248,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="LogOut" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="76"/>
+                            <Button x:Name="logout7" Content="LogOut" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="76"/>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name="logout8" Header="PONTOS INTERESSE" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="120" Margin="0,0,-64,0">
+                    <TabItem Header="PONTOS INTERESSE" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="120" Margin="0,0,-64,0">
                         <Grid>
                             <Grid.Background>
                                 <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                             </Grid.Background>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="418" Margin="94,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="691"/>
+                            <Rectangle x:Name="REC9" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="418" Margin="94,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="691"/>
                             <DataGrid HorizontalAlignment="Left" Height="329" Margin="116,87,0,0" VerticalAlignment="Top" Width="546"/>
                             <Button Content="Ver dados" HorizontalAlignment="Left" Margin="684,128,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button Content="Remover" HorizontalAlignment="Left" Margin="684,160,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button Content="Editar" HorizontalAlignment="Left" Margin="684,192,0,0" VerticalAlignment="Top" Width="75"/>
                             <Button Content="Limpar" HorizontalAlignment="Left" Margin="684,225,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="LogOut" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="76"/>
+                            <Button x:Name="logout8" Content="LogOut" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="76"/>
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -206,11 +205,11 @@
                         <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                     </TabControl.Background>
                     <TabItem Header="CONNECTOR">
-                        <Grid Margin="0,-1,0,1">
+                        <Grid x:Name="TRANSFERECONNETOR" Margin="0,-1,0,1">
                             <Grid.Background>
                                 <ImageBrush ImageSource="C:\Users\nmore_000\Desktop\Camo-Wallpaper-HD.jpg"/>
                             </Grid.Background>
-                            <Rectangle Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="356" Margin="157,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="564"/>
+                            <Rectangle x:Name="CONETOR" Fill="#FFD0D6C2" HorizontalAlignment="Left" Height="356" Margin="157,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="564"/>
                             <Button Content="Enviar" HorizontalAlignment="Left" Margin="393,360,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
                             <Button Content="Receber" HorizontalAlignment="Left" Margin="389,190,0,0" VerticalAlignment="Top" Width="75"/>
                             <Separator HorizontalAlignment="Left" Height="11" Margin="157,254,0,0" VerticalAlignment="Top" Width="562"/>

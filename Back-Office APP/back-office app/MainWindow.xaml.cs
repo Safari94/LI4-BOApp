@@ -30,6 +30,7 @@ namespace WpfApplication1
         List<PontoInteresee> pinteresse;
         static SerialPort porta;
         String data;
+        String simagem, saudio;
 
 
         public MainWindow()
@@ -76,9 +77,41 @@ namespace WpfApplication1
 
             if (password.Equals(passw))
             {
-                //fazer enable do resto das tabs e fazer disable da tab login
+                MessageBox.Show("k"); //fazer enable do resto das tabs e fazer disable da tab login
             }
             
+        }
+
+        private void sImagem_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            
+
+            // Show open file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+            {
+                simagem = dlg.FileName;
+                l1PI.Content = simagem;
+            }
+        }
+
+        private void sAudio_Click_1(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+
+            // Show open file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+            {
+                saudio = dlg.FileName;
+                l1PI.Content = simagem;
+            }
         }
 
         //-------------------------------------- INTERFACE TAREFA ------------------------------------------
@@ -140,11 +173,9 @@ namespace WpfApplication1
             int id = Int32.Parse(idPI.Text);
             float latitude = float.Parse(laPI.Text);
             float longitude = float.Parse(loPI.Text);
-            String image = l1PI.ToString();
-            String audio = L2PI.ToString();
             String txt = txtPI.Text;
 
-            q.inserePontoInteresse(id,latitude,longitude, image, audio,txt);
+            q.inserePontoInteresse(id,latitude,longitude,simagem ,saudio ,txt);
 
             idPI.Text = "";
             laPI.Text = "";
@@ -175,7 +206,7 @@ namespace WpfApplication1
 
         private void logout2_Click(Object sender, RoutedEventArgs e)
         {
-            this.Close();
+           
         }
 
         private void logout3_Click(Object sender, RoutedEventArgs e)
@@ -223,7 +254,6 @@ namespace WpfApplication1
         private void okMi_Click(Object sender, RoutedEventArgs e)
         {
             q = new Query();
-            MessageBox.Show("fodase");
             String idMissao = idmissao.Text;
             String[,] aux = new String[100, 2];
             q = new Query();
@@ -236,8 +266,6 @@ namespace WpfApplication1
 
             //insere na tabela tarefas
             //bloqueia outras tabs ate confirmar ou cancelar
-            
-
             
         }
 
@@ -266,6 +294,8 @@ namespace WpfApplication1
 
         }
     }
+
+
 
    
 }
